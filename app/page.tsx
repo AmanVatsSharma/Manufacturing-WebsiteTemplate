@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import ManufacturingGallery from "@/components/ManufacturingGallery";
 import WhatYouGet from "@/components/WhatYouGet";
+import IllustrationsShowcase from "@/components/IllustrationsShowcase";
 import Features from "@/components/Features";
 import ManufacturingShowcase from "@/components/ManufacturingShowcase";
 import ManufacturingVisuals from "@/components/ManufacturingVisuals";
@@ -19,6 +20,7 @@ export default function Home() {
       <Hero />
       <About />
       <ManufacturingGallery />
+      <IllustrationsShowcase />
       <WhatYouGet />
       <ManufacturingShowcase />
       <Features />

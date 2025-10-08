@@ -216,23 +216,26 @@ export default function About() {
           </div>
         </div>
 
-        {/* Company Values / Mission */}
+        {/* Company Values / Mission with Illustrations */}
         <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             { 
-              icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>,
+              illustration: "/illustrations/quality-control.svg",
+              fallbackIcon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>,
               title: "Quality First",
               description: "ISO certified processes ensure every product meets the highest quality standards.",
               color: "from-green-500 to-emerald-600"
             },
             { 
-              icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>,
+              illustration: "/illustrations/innovation.svg",
+              fallbackIcon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>,
               title: "Innovation Driven",
               description: "Continuous investment in latest technology and manufacturing techniques.",
               color: "from-blue-500 to-blue-600"
             },
             { 
-              icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
+              illustration: "/illustrations/supply-chain.svg",
+              fallbackIcon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
               title: "On-Time Delivery",
               description: "99.5% on-time delivery rate with efficient production and logistics.",
               color: "from-orange-500 to-red-600"
@@ -245,8 +248,19 @@ export default function About() {
               }`}
               style={{ transitionDelay: `${(idx + 2) * 200}ms` }}
             >
-              <div className={`w-16 h-16 mx-auto mb-6 bg-gradient-to-br ${value.color} rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                {value.icon}
+              <div className="w-32 h-32 mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 relative">
+                <Image 
+                  src={value.illustration}
+                  alt={`${value.title} illustration`}
+                  width={128}
+                  height={128}
+                  className="w-full h-full object-contain drop-shadow-lg"
+                  onError={(e) => {
+                    console.error(`Illustration failed to load: ${value.illustration}`);
+                    // Hide image on error, fallback icon could be shown instead
+                  }}
+                  onLoad={() => console.log(`Illustration loaded: ${value.illustration}`)}
+                />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
                 {value.title}
