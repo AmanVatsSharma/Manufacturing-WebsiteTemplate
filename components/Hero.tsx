@@ -172,7 +172,7 @@ export default function Hero() {
                 <div className="relative h-[500px] group">
                   <Image 
                     src="/20240613_BRI_ManufacturingTeam_1200x600_REDUCED-1080x600.jpg"
-                    alt="Vedpragya Bahrat Manufacturing Team - Professional industrial workforce"
+                    alt="Vedpragya bharat Manufacturing Team - Professional industrial workforce"
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     priority

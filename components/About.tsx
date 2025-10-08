@@ -115,7 +115,7 @@ export default function About() {
                   </div>
                   <div>
                     <div className="text-2xl font-extrabold text-shadow">Manufacturing Excellence</div>
-                    <div className="text-blue-100 font-semibold">by Vedpragya Bahrat Pvt. Ltd.</div>
+                    <div className="text-blue-100 font-semibold">by Vedpragya bharat Pvt. Ltd.</div>
                   </div>
                 </div>
 
@@ -160,7 +160,7 @@ export default function About() {
             {/* Description */}
             <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
               <p className="font-medium">
-                <span className="text-gray-900 font-bold">Vedpragya Bahrat Pvt. Ltd.</span> is a premier manufacturing company 
+                <span className="text-gray-900 font-bold">Vedpragya bharat Pvt. Ltd.</span> is a premier manufacturing company 
                 specializing in precision engineering, metal fabrication, and industrial products. With over two decades of 
                 experience, we serve clients across India and internationally.
               </p>

@@ -42,7 +42,7 @@ export default function Footer() {
               <div className="relative w-14 h-14">
                 <Image 
                   src="/logo_favicon.webp" 
-                  alt="Vedpragya Bahrat Logo" 
+                  alt="Vedpragya bharat Logo" 
                   width={56}
                   height={56}
                   className="object-contain"
@@ -55,7 +55,7 @@ export default function Footer() {
                 />
               </div>
               <div>
-                <div className="font-bold text-xl text-white">Vedpragya Bahrat</div>
+                <div className="font-bold text-xl text-white">Vedpragya bharat</div>
                 <div className="text-xs text-blue-300 font-semibold">Manufacturing Excellence</div>
               </div>
             </div>
@@ -265,7 +265,7 @@ export default function Footer() {
         <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
             <div className="text-gray-400">
-              © {currentYear} <span className="text-white font-bold">Vedpragya Bahrat Pvt. Ltd.</span> All rights reserved. 
+              © {currentYear} <span className="text-white font-bold">Vedpragya bharat Pvt. Ltd.</span> All rights reserved. 
               <span className="text-blue-400 ml-2">• Made in India 🇮🇳</span>
             </div>
             <div className="flex items-center space-x-6">

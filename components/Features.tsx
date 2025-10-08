@@ -192,7 +192,7 @@ export default function Features() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
             Why Choose
             <span className="block bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent mt-2">
-              Vedpragya Bahrat?
+              Vedpragya bharat?
             </span>
           </h2>
           
@@ -263,7 +263,7 @@ export default function Features() {
               Ready to Transform Your Manufacturing?
             </h3>
             <p className="text-xl md:text-2xl text-blue-100 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Join <span className="font-bold text-white">500+ manufacturing businesses</span> that trust Vedpragya Bahrat for their production needs.
+              Join <span className="font-bold text-white">500+ manufacturing businesses</span> that trust Vedpragya bharat for their production needs.
             </p>
             
             {/* CTA Buttons */}

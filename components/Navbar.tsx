@@ -63,7 +63,7 @@ export default function Navbar() {
               <div className="relative w-12 h-12 transition-transform duration-300 group-hover:scale-110">
                 <Image 
                   src="/logo_favicon.webp" 
-                  alt="Vedpragya Bahrat Logo" 
+                  alt="Vedpragya bharat Logo" 
                   width={48}
                   height={48}
                   className="object-contain"
@@ -79,7 +79,7 @@ export default function Navbar() {
               {/* Company Name */}
               <div className="flex flex-col">
                 <span className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
-                  Vedpragya Bahrat
+                  Vedpragya bharat
                 </span>
                 <span className="text-xs text-gray-600 font-medium">Manufacturing Excellence</span>
               </div>

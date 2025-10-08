@@ -114,7 +114,7 @@ export default function Contact() {
                   <div className="flex-1">
                     <h4 className="font-bold text-gray-900 mb-2 text-lg">Corporate Headquarters</h4>
                     <p className="text-gray-600 font-medium">
-                      Vedpragya Bahrat Pvt. Ltd.<br />
+                      Vedpragya bharat Pvt. Ltd.<br />
                       131, Sector 22<br />
                       Gurugram, Haryana 122001<br />
                       India
@@ -240,7 +240,7 @@ export default function Contact() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Vedpragya Bahrat Corporate Office - Gurugram, Haryana"
+                title="Vedpragya bharat Corporate Office - Gurugram, Haryana"
                 onLoad={() => console.log("Google Maps iframe loaded successfully")}
                 onError={() => console.error("Google Maps iframe failed to load")}
               ></iframe>
