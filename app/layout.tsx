@@ -46,6 +46,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Favicon - Company Logo */}
+        <link rel="icon" href="/logo_favicon.webp" type="image/webp" />
+        <link rel="apple-touch-icon" href="/logo_favicon.webp" />
         <Analytics />
       </head>
       <body className={inter.className}>{children}</body>

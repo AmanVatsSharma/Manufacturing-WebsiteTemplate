@@ -1,9 +1,34 @@
+/**
+ * Global Styles for Manufacturing Website
+ * 
+ * Design Philosophy:
+ * - High contrast for professional look
+ * - Industrial color palette (Blues, Grays, Orange accents)
+ * - Smooth animations for modern feel
+ * - Optimized for manufacturing business aesthetic
+ */
+
 @import "tailwindcss";
 
 @theme {
+  /* Primary Brand Colors - Industrial Blue & Safety Orange */
   --color-primary-blue: #2563eb;
+  --color-primary-blue-dark: #1e40af;
+  --color-primary-blue-darker: #1e3a8a;
   --color-primary-orange: #f97316;
+  --color-primary-orange-dark: #ea580c;
   
+  /* Industrial Grays for Professional Look */
+  --color-industrial-gray: #374151;
+  --color-industrial-gray-dark: #1f2937;
+  --color-industrial-gray-light: #6b7280;
+  
+  /* Accent Colors */
+  --color-accent-yellow: #fbbf24;
+  --color-accent-green: #10b981;
+  --color-accent-red: #ef4444;
+  
+  /* Typography */
   --font-family-body: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
@@ -11,6 +36,11 @@
   --foreground-rgb: 15, 23, 42;
   --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
+  
+  /* Custom CSS Variables for Manufacturing Theme */
+  --shadow-blue: rgba(37, 99, 235, 0.2);
+  --shadow-orange: rgba(249, 115, 22, 0.2);
+  --gradient-industrial: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #f97316 100%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -85,19 +115,208 @@ body {
   }
 }
 
-/* Smooth scrolling */
+/* 
+ * ============================================
+ * SMOOTH SCROLLING & BASE ANIMATIONS
+ * ============================================
+ */
+
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom animations */
+/* 
+ * ============================================
+ * CUSTOM KEYFRAME ANIMATIONS
+ * Professional animations for manufacturing website
+ * ============================================
+ */
+
+/* Floating Animation - For Cards and Elements */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-20px); 
+  }
 }
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+/* Fade In Up - For Content Reveals */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Fade In - Simple Fade */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* Scale In - For Images and Cards */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+/* Slide In Left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+/* Slide In Right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+/* Pulse Glow - For Attention Elements */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(37, 99, 235, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.8), 0 0 40px rgba(37, 99, 235, 0.4);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+/* Rotate In - For Icons */
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+.animate-rotate-in {
+  animation: rotateIn 0.6s ease-out forwards;
+}
+
+/* Bounce In - For CTAs */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-bounce-in {
+  animation: bounceIn 0.8s ease-out forwards;
+}
+
+/* Count Up Animation - For Numbers */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-count-up {
+  animation: countUp 0.6s ease-out forwards;
+}
+
+/* Shimmer Effect - For Loading/Highlighting */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Parallax Scroll Effect */
+.parallax {
+  will-change: transform;
+  transition: transform 0.1s ease-out;
 }
 
 /* Glassmorphism effect */
@@ -107,43 +326,195 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Enhanced button styles */
+/* 
+ * ============================================
+ * ENHANCED BUTTON STYLES
+ * Professional, high-contrast buttons for manufacturing website
+ * ============================================
+ */
+
+/* Primary Button - Blue Gradient */
 .btn-primary {
-  background-image: linear-gradient(to right, #2563eb, #1d4ed8);
+  background-image: linear-gradient(135deg, #2563eb, #1d4ed8);
   color: white;
-  font-weight: 600;
+  font-weight: 700;
   padding-left: 2rem;
   padding-right: 2rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
   border-radius: 0.5rem;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3), 0 4px 6px rgba(0, 0, 0, 0.1);
   transform: scale(1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
 }
 
 .btn-primary:hover {
-  background-image: linear-gradient(to right, #1d4ed8, #1e40af);
-  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  transform: scale(1.05);
+  background-image: linear-gradient(135deg, #1d4ed8, #1e40af);
+  box-shadow: 0 20px 30px rgba(37, 99, 235, 0.4), 0 8px 12px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05) translateY(-2px);
+  border-color: #60a5fa;
 }
 
+.btn-primary:active {
+  transform: scale(1.02) translateY(0);
+}
+
+/* Secondary Button - Orange Gradient */
 .btn-secondary {
-  background-image: linear-gradient(to right, #f97316, #ea580c);
+  background-image: linear-gradient(135deg, #f97316, #ea580c);
   color: white;
-  font-weight: 600;
+  font-weight: 700;
   padding-left: 2rem;
   padding-right: 2rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
   border-radius: 0.5rem;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3), 0 4px 6px rgba(0, 0, 0, 0.1);
   transform: scale(1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.btn-secondary:hover::before {
+  left: 100%;
 }
 
 .btn-secondary:hover {
-  background-image: linear-gradient(to right, #ea580c, #c2410c);
-  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  transform: scale(1.05);
+  background-image: linear-gradient(135deg, #ea580c, #c2410c);
+  box-shadow: 0 20px 30px rgba(249, 115, 22, 0.4), 0 8px 12px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05) translateY(-2px);
+  border-color: #fb923c;
+}
+
+.btn-secondary:active {
+  transform: scale(1.02) translateY(0);
+}
+
+/* Outline Button - For Secondary Actions */
+.btn-outline {
+  background: transparent;
+  color: #2563eb;
+  font-weight: 700;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid #2563eb;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-outline:hover {
+  background: #2563eb;
+  color: white;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+  transform: scale(1.05) translateY(-2px);
+}
+
+/* 
+ * ============================================
+ * UTILITY CLASSES FOR MANUFACTURING THEME
+ * ============================================
+ */
+
+/* Industrial Background Patterns */
+.bg-industrial-pattern {
+  background-image: 
+    repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0, 0, 0, 0.02) 10px, rgba(0, 0, 0, 0.02) 20px);
+}
+
+/* High Contrast Card */
+.card-industrial {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card-industrial:hover {
+  border-color: #2563eb;
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Badge Styles for Certifications */
+.badge-certification {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  font-weight: 700;
+  font-size: 0.875rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+/* Professional Divider */
+.divider-industrial {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #2563eb, transparent);
+  margin: 2rem 0;
+}
+
+/* Image Overlay Effects */
+.image-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  transition: opacity 0.3s ease;
+}
+
+.image-overlay:hover::after {
+  opacity: 0.9;
+}
+
+/* Text Shadow for Readability */
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.text-shadow-strong {
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
 }

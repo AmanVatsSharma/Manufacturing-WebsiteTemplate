@@ -1,158 +1,309 @@
+"use client";
+
+import { useState, useEffect, useRef } from "react";
+
+/**
+ * Features Component - Manufacturing Website Showcase
+ * 
+ * Purpose:
+ * - Display key features and benefits for manufacturing businesses
+ * - High-contrast industrial design
+ * - Animated entrance effects
+ * - Hover interactions for engagement
+ * 
+ * Flow:
+ * 1. Features load with data
+ * 2. Intersection Observer triggers animations when scrolled into view
+ * 3. Each card animates in with delay
+ * 4. Hover effects provide interactivity
+ */
 export default function Features() {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  // Console log for debugging
+  console.log("Features component rendered. Visible:", isVisible);
+
+  // Intersection Observer for scroll-triggered animations
+  useEffect(() => {
+    try {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !isVisible) {
+              setIsVisible(true);
+              console.log("Features section entered viewport - animations triggered");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      if (sectionRef.current) {
+        observer.observe(sectionRef.current);
+        console.log("Intersection observer attached to Features section");
+      }
+
+      return () => {
+        if (sectionRef.current) {
+          observer.unobserve(sectionRef.current);
+          console.log("Intersection observer cleaned up");
+        }
+      };
+    } catch (error) {
+      console.error("Error setting up Features intersection observer:", error);
+    }
+  }, [isVisible]);
+
+  // Manufacturing-specific features
   const features = [
     {
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-      ),
-      title: "SEO Domination",
-      description: "Rank #1 on Google for your industry keywords. Advanced on-page and technical SEO built-in from day one.",
-      color: "blue"
-    },
-    {
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-        </svg>
-      ),
-      title: "Lightning Fast",
-      description: "Sub-second load times guaranteed. Optimized for Core Web Vitals and Google's performance standards.",
-      color: "orange"
-    },
-    {
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-        </svg>
-      ),
-      title: "Mobile-First Design",
-      description: "Stunning on every device. 80% of your customers are mobile - we optimize for their experience first.",
-      color: "green"
-    },
-    {
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
       ),
-      title: "Enterprise Security",
-      description: "Bank-grade SSL encryption, DDoS protection, and regular security audits keep your business safe.",
-      color: "purple"
+      title: "ISO Certified Quality",
+      description: "ISO 9001:2015 and ISO 14001 certified manufacturing processes. Quality assurance at every step with 99.9% accuracy rate.",
+      color: "blue",
+      badge: "CERTIFIED"
     },
     {
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       ),
-      title: "Advanced Analytics",
-      description: "Track every visitor, conversion, and lead. Integrated with Google Analytics, FB Pixel, and GTM.",
-      color: "indigo"
+      title: "Rapid Production",
+      description: "State-of-the-art CNC machines and automated systems. 24/7 production capability with quick turnaround times.",
+      color: "orange",
+      badge: "24/7"
     },
     {
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
         </svg>
       ),
-      title: "Lead Generation Engine",
-      description: "Smart forms, chatbots, and CTAs designed to capture and convert more qualified leads automatically.",
-      color: "red"
+      title: "Precision Engineering",
+      description: "Tolerances up to ±0.001mm with advanced measurement systems. Expert engineering team with 20+ years experience.",
+      color: "green",
+      badge: "EXPERT"
     },
     {
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
         </svg>
       ),
-      title: "Easy Content Management",
-      description: "Update your website content, add products, and post news without any technical knowledge required.",
-      color: "yellow"
+      title: "Advanced Facilities",
+      description: "Modern manufacturing plants with cutting-edge equipment. Climate-controlled production areas for optimal quality.",
+      color: "purple",
+      badge: "MODERN"
     },
     {
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      ),
+      title: "Skilled Workforce",
+      description: "Highly trained technicians and engineers. Continuous training programs to maintain excellence in manufacturing.",
+      color: "indigo",
+      badge: "TRAINED"
+    },
+    {
+      icon: (
+        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+      title: "On-Time Delivery",
+      description: "99.5% on-time delivery rate. Efficient logistics and supply chain management for timely order fulfillment.",
+      color: "teal",
+      badge: "RELIABLE"
+    },
+    {
+      icon: (
+        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+        </svg>
+      ),
+      title: "Quality Testing",
+      description: "Rigorous multi-stage testing procedures. Complete documentation and certification for every product batch.",
+      color: "red",
+      badge: "VERIFIED"
+    },
+    {
+      icon: (
+        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+        </svg>
+      ),
+      title: "Custom Solutions",
+      description: "Tailored manufacturing solutions for unique requirements. From prototyping to full-scale production runs.",
+      color: "yellow",
+      badge: "FLEXIBLE"
+    },
+    {
+      icon: (
+        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
         </svg>
       ),
       title: "24/7 Support",
-      description: "Dedicated support team available round the clock to ensure your website runs smoothly always.",
-      color: "teal"
-    },
-    {
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-        </svg>
-      ),
-      title: "Scalable Architecture",
-      description: "Grow from 100 to 100,000 visitors without any performance issues. Built for enterprise scale.",
-      color: "pink"
+      description: "Round-the-clock technical support and customer service. Dedicated account managers for enterprise clients.",
+      color: "pink",
+      badge: "SUPPORT"
     }
   ];
 
-  const colorClasses: Record<string, { bg: string, text: string, border: string }> = {
-    blue: { bg: "bg-blue-100", text: "text-blue-600", border: "border-blue-200" },
-    orange: { bg: "bg-orange-100", text: "text-orange-600", border: "border-orange-200" },
-    green: { bg: "bg-green-100", text: "text-green-600", border: "border-green-200" },
-    purple: { bg: "bg-purple-100", text: "text-purple-600", border: "border-purple-200" },
-    indigo: { bg: "bg-indigo-100", text: "text-indigo-600", border: "border-indigo-200" },
-    red: { bg: "bg-red-100", text: "text-red-600", border: "border-red-200" },
-    yellow: { bg: "bg-yellow-100", text: "text-yellow-600", border: "border-yellow-200" },
-    teal: { bg: "bg-teal-100", text: "text-teal-600", border: "border-teal-200" },
-    pink: { bg: "bg-pink-100", text: "text-pink-600", border: "border-pink-200" },
+  const colorClasses: Record<string, { bg: string, text: string, border: string, hover: string }> = {
+    blue: { bg: "bg-blue-50", text: "text-blue-600", border: "border-blue-200", hover: "hover:border-blue-500" },
+    orange: { bg: "bg-orange-50", text: "text-orange-600", border: "border-orange-200", hover: "hover:border-orange-500" },
+    green: { bg: "bg-green-50", text: "text-green-600", border: "border-green-200", hover: "hover:border-green-500" },
+    purple: { bg: "bg-purple-50", text: "text-purple-600", border: "border-purple-200", hover: "hover:border-purple-500" },
+    indigo: { bg: "bg-indigo-50", text: "text-indigo-600", border: "border-indigo-200", hover: "hover:border-indigo-500" },
+    red: { bg: "bg-red-50", text: "text-red-600", border: "border-red-200", hover: "hover:border-red-500" },
+    yellow: { bg: "bg-yellow-50", text: "text-yellow-600", border: "border-yellow-200", hover: "hover:border-yellow-500" },
+    teal: { bg: "bg-teal-50", text: "text-teal-600", border: "border-teal-200", hover: "hover:border-teal-500" },
+    pink: { bg: "bg-pink-50", text: "text-pink-600", border: "border-pink-200", hover: "hover:border-pink-500" },
   };
 
   return (
-    <section id="features" className="section-padding bg-gradient-to-br from-gray-50 to-blue-50">
-      <div className="container-custom">
+    <section 
+      id="features" 
+      ref={sectionRef}
+      className="section-padding bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden"
+    >
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-industrial-pattern opacity-30"></div>
+
+      <div className="container-custom relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            Features & Benefits
+        <div className="text-center max-w-4xl mx-auto mb-16">
+          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-full text-sm font-bold mb-6 shadow-lg">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            </svg>
+            <span>MANUFACTURING EXCELLENCE</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Everything Your Manufacturing
-            <span className="block gradient-text">Business Needs to Succeed Online</span>
+          
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+            Why Choose
+            <span className="block bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent mt-2">
+              Vedpragya Bahrat?
+            </span>
           </h2>
-          <p className="text-xl text-gray-600">
-            Enterprise-grade features that drive results. No compromises, just excellence.
+          
+          <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
+            Enterprise-grade manufacturing capabilities that drive results. 
+            <span className="block mt-2 text-gray-900 font-semibold">
+              No compromises, just excellence.
+            </span>
           </p>
         </div>
 
-        {/* Features Grid */}
+        {/* Features Grid with staggered animations */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => {
             const colors = colorClasses[feature.color];
             return (
               <div
                 key={index}
-                className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
+                className={`group card-industrial p-8 transition-all duration-500 transform ${
+                  isVisible 
+                    ? 'translate-y-0 opacity-100' 
+                    : 'translate-y-10 opacity-0'
+                } ${colors.hover}`}
+                style={{ 
+                  transitionDelay: isVisible ? `${index * 100}ms` : '0ms' 
+                }}
+                onMouseEnter={() => console.log(`Feature card hovered: ${feature.title}`)}
               >
-                <div className={`w-16 h-16 ${colors.bg} rounded-xl flex items-center justify-center ${colors.text} mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                {/* Badge */}
+                <div className={`inline-block ${colors.bg} ${colors.text} px-3 py-1 rounded-full text-xs font-bold mb-4 border ${colors.border}`}>
+                  {feature.badge}
+                </div>
+
+                {/* Icon */}
+                <div className={`w-20 h-20 ${colors.bg} rounded-2xl flex items-center justify-center ${colors.text} mb-6 group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-xl border-2 ${colors.border}`}>
                   {feature.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+
+                {/* Title */}
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
+                  {feature.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray-600 leading-relaxed text-base">
+                  {feature.description}
+                </p>
+
+                {/* Hover indicator */}
+                <div className="mt-6 flex items-center text-blue-600 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span>Learn More</span>
+                  <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
               </div>
             );
           })}
         </div>
 
-        {/* CTA Section */}
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-blue-600 to-orange-500 rounded-2xl p-12 text-white">
-            <h3 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to Transform Your Business?
+        {/* CTA Section with Image Background */}
+        <div className="mt-20 relative rounded-3xl overflow-hidden shadow-2xl">
+          {/* Background Image */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/95 via-blue-800/90 to-orange-600/95"></div>
+          
+          <div className="relative z-10 p-12 md:p-16 text-white text-center">
+            <h3 className="text-3xl md:text-5xl font-extrabold mb-6 text-shadow-strong">
+              Ready to Transform Your Manufacturing?
             </h3>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Join 500+ manufacturing businesses that trust EnterpriseHero for their online presence.
+            <p className="text-xl md:text-2xl text-blue-100 mb-10 max-w-3xl mx-auto leading-relaxed">
+              Join <span className="font-bold text-white">500+ manufacturing businesses</span> that trust Vedpragya Bahrat for their production needs.
             </p>
-            <a href="#contact" className="inline-block bg-white text-blue-600 px-10 py-4 rounded-lg font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-              Get Your Enterprise Website Now
-              <span className="ml-2">→</span>
-            </a>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a 
+                href="#contact" 
+                className="inline-block bg-white text-blue-600 px-10 py-5 rounded-xl font-bold text-lg shadow-2xl hover:shadow-white/50 transform hover:scale-105 transition-all duration-300 group"
+                onClick={() => console.log("Features CTA: Get Started clicked")}
+              >
+                Get Your Quote Now
+                <span className="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
+              </a>
+              <a 
+                href="tel:+911234567890" 
+                className="inline-block bg-orange-500 text-white px-10 py-5 rounded-xl font-bold text-lg shadow-2xl hover:bg-orange-600 transform hover:scale-105 transition-all duration-300 group"
+                onClick={() => console.log("Features CTA: Call Now clicked")}
+              >
+                📞 Call Now: +91 123 456 7890
+              </a>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-8 border-t border-white/20">
+              <div>
+                <div className="text-3xl md:text-4xl font-extrabold text-white mb-2">500+</div>
+                <div className="text-blue-100 text-sm font-semibold">Happy Clients</div>
+              </div>
+              <div>
+                <div className="text-3xl md:text-4xl font-extrabold text-white mb-2">99.9%</div>
+                <div className="text-blue-100 text-sm font-semibold">Quality Rate</div>
+              </div>
+              <div>
+                <div className="text-3xl md:text-4xl font-extrabold text-white mb-2">20+</div>
+                <div className="text-blue-100 text-sm font-semibold">Years Experience</div>
+              </div>
+              <div>
+                <div className="text-3xl md:text-4xl font-extrabold text-white mb-2">24/7</div>
+                <div className="text-blue-100 text-sm font-semibold">Support</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
