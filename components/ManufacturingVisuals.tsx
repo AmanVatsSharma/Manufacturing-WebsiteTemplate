@@ -20,27 +20,29 @@ export default function ManufacturingVisuals() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {/* Factory Floor Visualization */}
           <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-12 text-white">
-              <div className="flex items-center space-x-4 mb-8">
-                <div className="w-16 h-16 bg-blue-500 rounded-xl flex items-center justify-center">
-                  <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-                  </svg>
+            <div className="relative">
+              <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 text-white">
+                <div className="flex items-center space-x-4 mb-6">
+                  <div className="w-16 h-16 bg-blue-500 rounded-xl flex items-center justify-center">
+                    <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold">Factory Floor Gallery</h3>
+                    <p className="text-gray-400">Full-width image showcases</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-2xl font-bold">Factory Floor Gallery</h3>
-                  <p className="text-gray-400">Full-width image showcases</p>
-                </div>
-              </div>
-              <div className="grid grid-cols-3 gap-4">
-                <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg p-6 aspect-square flex items-center justify-center">
-                  <span className="text-6xl">🏭</span>
-                </div>
-                <div className="bg-gradient-to-br from-orange-600 to-orange-700 rounded-lg p-6 aspect-square flex items-center justify-center">
-                  <span className="text-6xl">⚙️</span>
-                </div>
-                <div className="bg-gradient-to-br from-green-600 to-green-700 rounded-lg p-6 aspect-square flex items-center justify-center">
-                  <span className="text-6xl">🔧</span>
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="rounded-lg overflow-hidden aspect-square">
+                    <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&auto=format&fit=crop" alt="Factory floor" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="rounded-lg overflow-hidden aspect-square">
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee67e7d01f9b?w=400&auto=format&fit=crop" alt="Manufacturing equipment" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="rounded-lg overflow-hidden aspect-square">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&auto=format&fit=crop" alt="Production line" className="w-full h-full object-cover" />
+                  </div>
                 </div>
               </div>
             </div>

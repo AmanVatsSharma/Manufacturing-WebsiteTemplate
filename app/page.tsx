@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import ManufacturingGallery from "@/components/ManufacturingGallery";
 import WhatYouGet from "@/components/WhatYouGet";
 import Features from "@/components/Features";
 import ManufacturingShowcase from "@/components/ManufacturingShowcase";
@@ -17,6 +18,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      <ManufacturingGallery />
       <WhatYouGet />
       <ManufacturingShowcase />
       <Features />

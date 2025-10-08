@@ -6,21 +6,21 @@ import Analytics from "@/components/Analytics";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "EnterpriseHero - World-Class Manufacturing Websites by Vedpragya Bharat",
-  description: "Transform your manufacturing business with enterprise-grade websites. Professional, SEO-optimized, and conversion-focused web solutions for the manufacturing industry.",
-  keywords: "manufacturing website, enterprise web solutions, factory website, industrial web design, business websites, EnterpriseHero, Vedpragya Bharat",
-  authors: [{ name: "Vedpragya Bharat Pvt. Ltd." }],
+  title: "Vedpragya Bahrat Pvt. Ltd. - Leading Manufacturing Company in India",
+  description: "Vedpragya Bahrat Pvt. Ltd. - ISO certified manufacturing company specializing in precision engineering and industrial products. Located in Gurugram and Bhiwani, Haryana.",
+  keywords: "manufacturing company, industrial products, precision engineering, ISO certified, Vedpragya Bahrat, Gurugram manufacturing, Bhiwani factory, manufacturing India",
+  authors: [{ name: "Vedpragya Bahrat Pvt. Ltd." }],
   openGraph: {
-    title: "EnterpriseHero - World-Class Manufacturing Websites",
-    description: "Transform your manufacturing business with enterprise-grade websites.",
+    title: "Vedpragya Bahrat Pvt. Ltd. - Manufacturing Excellence",
+    description: "Leading manufacturing company delivering high-quality industrial products and precision engineering solutions.",
     type: "website",
-    locale: "en_US",
-    siteName: "EnterpriseHero",
+    locale: "en_IN",
+    siteName: "Vedpragya Bahrat Pvt. Ltd.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "EnterpriseHero - World-Class Manufacturing Websites",
-    description: "Transform your manufacturing business with enterprise-grade websites.",
+    title: "Vedpragya Bahrat - Manufacturing Excellence",
+    description: "ISO certified manufacturing company specializing in precision engineering and industrial products.",
   },
   robots: {
     index: true,
