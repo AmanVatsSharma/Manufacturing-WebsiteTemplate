@@ -32,11 +32,17 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-1">Office Address</h4>
+                    <h4 className="font-bold text-gray-900 mb-1">Corporate Address</h4>
                     <p className="text-gray-600">
-                      Vedpragya Bharat Pvt. Ltd.<br />
-                      123 Innovation Hub, Tech Park<br />
-                      Bangalore, Karnataka 560001<br />
+                      Vedpragya Bahrat Pvt. Ltd.<br />
+                      131, Sector 22<br />
+                      Gurugram, Haryana<br />
+                      India
+                    </p>
+                    <h4 className="font-bold text-gray-900 mb-1 mt-4">Registered Office</h4>
+                    <p className="text-gray-600">
+                      Opposite Bansilal Park<br />
+                      Bhiwani, Haryana<br />
                       India
                     </p>
                   </div>
@@ -52,8 +58,8 @@ export default function Contact() {
                   <div>
                     <h4 className="font-bold text-gray-900 mb-1">Phone</h4>
                     <p className="text-gray-600">
-                      <a href="tel:+911234567890" className="hover:text-blue-600 transition-colors">+91 123 456 7890</a><br />
-                      <a href="tel:+911234567891" className="hover:text-blue-600 transition-colors">+91 123 456 7891</a>
+                      <a href="tel:+919963730111" className="hover:text-blue-600 transition-colors">+91 9963730111</a><br />
+                      <a href="tel:+919812268980" className="hover:text-blue-600 transition-colors">+91 9812268980</a>
                     </p>
                   </div>
                 </div>
@@ -68,8 +74,7 @@ export default function Contact() {
                   <div>
                     <h4 className="font-bold text-gray-900 mb-1">Email</h4>
                     <p className="text-gray-600">
-                      <a href="mailto:info@enterprisehero.com" className="hover:text-blue-600 transition-colors">info@enterprisehero.com</a><br />
-                      <a href="mailto:sales@enterprisehero.com" className="hover:text-blue-600 transition-colors">sales@enterprisehero.com</a>
+                      <a href="mailto:vedpragyabharat@gmail.com" className="hover:text-blue-600 transition-colors">vedpragyabharat@gmail.com</a>
                     </p>
                   </div>
                 </div>
@@ -126,14 +131,14 @@ export default function Contact() {
           <div className="h-full min-h-[500px]">
             <div className="bg-gray-200 rounded-2xl overflow-hidden h-full shadow-lg">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.8974351434777!2d77.59456931482183!3d12.971598890866831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBangalore%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224357.4897286629!2d76.84324849999999!3d28.4594965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19d582e38859%3A0x2cf5fe8e5c64b1e!2sSector%2022%2C%20Gurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1234567890"
                 width="100%"
                 height="100%"
                 style={{ border: 0, minHeight: "500px" }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Vedpragya Bharat Office Location"
+                title="Vedpragya Bahrat Corporate Office - Gurugram"
               ></iframe>
             </div>
           </div>

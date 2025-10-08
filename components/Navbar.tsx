@@ -14,11 +14,11 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center space-x-2">
               <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-orange-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">EH</span>
+                <span className="text-white font-bold text-xl">VB</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-gray-900">EnterpriseHero</span>
-                <span className="text-xs text-gray-600">by Vedpragya Bharat</span>
+                <span className="text-xl font-bold text-gray-900">Vedpragya Bahrat</span>
+                <span className="text-xs text-gray-600">Manufacturing Excellence</span>
               </div>
             </Link>
           </div>

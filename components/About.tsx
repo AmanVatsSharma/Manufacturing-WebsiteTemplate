@@ -5,7 +5,31 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left - Image/Visual */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-blue-600 to-orange-500 rounded-2xl p-8 text-white">
+            {/* Manufacturing Images Collage */}
+            <div className="grid grid-cols-2 gap-4 mb-6">
+              <div className="relative rounded-2xl overflow-hidden shadow-xl h-64">
+                <img 
+                  src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&auto=format&fit=crop" 
+                  alt="Manufacturing facility" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent flex items-end p-4">
+                  <span className="text-white font-bold text-sm">Modern Factory Floor</span>
+                </div>
+              </div>
+              <div className="relative rounded-2xl overflow-hidden shadow-xl h-64">
+                <img 
+                  src="https://images.unsplash.com/photo-1581092160607-ee67e7d01f9b?w=600&auto=format&fit=crop" 
+                  alt="Precision machinery" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-orange-900/80 to-transparent flex items-end p-4">
+                  <span className="text-white font-bold text-sm">Precision Equipment</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-gradient-to-br from-blue-600 to-orange-500 rounded-2xl p-8 text-white shadow-2xl">
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
                   <div className="w-16 h-16 bg-white/20 backdrop-blur rounded-xl flex items-center justify-center">
@@ -15,37 +39,24 @@ export default function About() {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold">EnterpriseHero</div>
-                    <div className="text-blue-100">by Vedpragya Bharat Pvt. Ltd.</div>
+                    <div className="text-2xl font-bold">Manufacturing Solutions</div>
+                    <div className="text-blue-100">by Vedpragya Bahrat Pvt. Ltd.</div>
                   </div>
                 </div>
 
-                <div className="space-y-4">
-                  <div className="bg-white/10 backdrop-blur rounded-xl p-6">
-                    <div className="text-4xl font-bold mb-2">10+</div>
-                    <div className="text-blue-100">Years of Excellence</div>
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="bg-white/10 backdrop-blur rounded-xl p-4 text-center">
+                    <div className="text-3xl font-bold mb-1">20+</div>
+                    <div className="text-xs text-blue-100">Years Experience</div>
                   </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-white/10 backdrop-blur rounded-xl p-4">
-                      <div className="text-3xl font-bold mb-1">500+</div>
-                      <div className="text-sm text-blue-100">Projects Delivered</div>
-                    </div>
-                    <div className="bg-white/10 backdrop-blur rounded-xl p-4">
-                      <div className="text-3xl font-bold mb-1">98%</div>
-                      <div className="text-sm text-blue-100">Client Satisfaction</div>
-                    </div>
+                  <div className="bg-white/10 backdrop-blur rounded-xl p-4 text-center">
+                    <div className="text-3xl font-bold mb-1">ISO</div>
+                    <div className="text-xs text-blue-100">Certified</div>
                   </div>
-                </div>
-
-                <div className="flex items-center space-x-2 pt-4">
-                  <div className="flex -space-x-3">
-                    {[1, 2, 3, 4].map((i) => (
-                      <div key={i} className="w-10 h-10 bg-white/30 rounded-full border-2 border-white flex items-center justify-center">
-                        <span className="text-xs font-bold">👤</span>
-                      </div>
-                    ))}
+                  <div className="bg-white/10 backdrop-blur rounded-xl p-4 text-center">
+                    <div className="text-3xl font-bold mb-1">100+</div>
+                    <div className="text-xs text-blue-100">Products</div>
                   </div>
-                  <div className="text-sm text-blue-100">Join 500+ happy manufacturing businesses</div>
                 </div>
               </div>
             </div>
@@ -62,17 +73,17 @@ export default function About() {
                 About Us
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Empowering Manufacturing
-                <span className="block gradient-text">Excellence Online</span>
+                Leading India's Manufacturing
+                <span className="block gradient-text">Industry Forward</span>
               </h2>
             </div>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              <strong className="text-gray-900">Vedpragya Bharat Pvt. Ltd.</strong> is a pioneering technology company dedicated to transforming the manufacturing industry through cutting-edge digital solutions.
+              <strong className="text-gray-900">Vedpragya Bahrat Pvt. Ltd.</strong> is a leading manufacturing company dedicated to delivering high-quality products and services through cutting-edge technology and precision engineering.
             </p>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              Our flagship brand, <strong className="text-blue-600">EnterpriseHero</strong>, specializes in creating world-class, enterprise-grade websites that help manufacturing businesses establish a powerful online presence, capture quality leads, and drive sustainable growth.
+              With state-of-the-art facilities in Gurugram and Bhiwani, we specialize in manufacturing excellence, serving diverse industries with innovative solutions and maintaining the highest quality standards.
             </p>
 
             <div className="space-y-4 pt-4">

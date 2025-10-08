@@ -23,51 +23,51 @@ export default function Hero() {
           <div className={`space-y-8 transition-all duration-1000 transform ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
             <div className="inline-flex items-center space-x-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold">
               <span className="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></span>
-              <span>Enterprise-Grade Web Solutions</span>
+              <span>ISO Certified Manufacturing Excellence</span>
             </div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
-              Transform Your
-              <span className="block gradient-text">Manufacturing Business</span>
+              Precision Engineering
+              <span className="block gradient-text">Manufacturing Excellence</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
-              World-class websites that drive growth, capture leads, and showcase your manufacturing excellence. Built by experts, designed for results.
+              Leading manufacturer of high-quality industrial products and components. Delivering precision, reliability, and innovation to industries across India.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#contact" className="btn-primary text-center">
-                Get a Website Like This
+                Request a Quote
                 <span className="ml-2">→</span>
               </a>
               <a 
                 href="#features" 
                 className="bg-white border-2 border-gray-300 hover:border-blue-600 text-gray-800 font-semibold px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-center"
               >
-                Explore Features
+                View Products
               </a>
             </div>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 pt-8">
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-blue-600">100%</div>
-                <div className="text-sm text-gray-600 mt-1">SEO Score</div>
+                <div className="text-3xl md:text-4xl font-bold text-blue-600">20+</div>
+                <div className="text-sm text-gray-600 mt-1">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-orange-600">99+</div>
-                <div className="text-sm text-gray-600 mt-1">Performance</div>
+                <div className="text-3xl md:text-4xl font-bold text-orange-600">ISO</div>
+                <div className="text-sm text-gray-600 mt-1">Certified</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-green-600">500+</div>
-                <div className="text-sm text-gray-600 mt-1">Happy Clients</div>
+                <div className="text-3xl md:text-4xl font-bold text-green-600">1000+</div>
+                <div className="text-sm text-gray-600 mt-1">Products</div>
               </div>
             </div>
 
-            {/* Analytics Integration Badge */}
+            {/* Quality Badge */}
             <div className="bg-gradient-to-r from-blue-50 to-orange-50 border border-blue-200 rounded-lg p-4">
               <p className="text-sm font-semibold text-gray-700">
-                🎯 All Analytics Integrated: Google Analytics • Facebook Pixel • Google Tag Manager
+                🏆 Quality Certifications: ISO 9001 • ISO 14001 • CE Certified • Made in India
               </p>
             </div>
           </div>
@@ -84,26 +84,29 @@ export default function Hero() {
                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                   </div>
                   <div className="flex-1 bg-gray-700 rounded mx-4 px-3 py-1 text-xs text-gray-300">
-                    enterprisehero.com
+                    vedpragyabharat.com
                   </div>
                 </div>
-                <div className="bg-gradient-to-br from-blue-600 to-orange-500 p-8 md:p-12 text-white">
-                  <div className="space-y-4">
-                    <div className="w-16 h-16 bg-white/20 backdrop-blur rounded-lg flex items-center justify-center">
-                      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
-                      </svg>
-                    </div>
-                    <h3 className="text-2xl font-bold">Your Manufacturing Excellence</h3>
-                    <p className="text-blue-100">Powered by enterprise technology</p>
-                    <div className="grid grid-cols-2 gap-3 pt-4">
-                      <div className="bg-white/10 backdrop-blur rounded-lg p-3">
-                        <div className="text-2xl font-bold">24/7</div>
-                        <div className="text-sm text-blue-100">Support</div>
-                      </div>
-                      <div className="bg-white/10 backdrop-blur rounded-lg p-3">
-                        <div className="text-2xl font-bold">100%</div>
-                        <div className="text-sm text-blue-100">Uptime</div>
+                {/* Manufacturing Image */}
+                <div className="relative h-96 bg-gradient-to-br from-gray-900 to-gray-800">
+                  <img 
+                    src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&auto=format&fit=crop" 
+                    alt="Manufacturing facility" 
+                    className="w-full h-full object-cover opacity-80"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-blue-900/50 to-transparent flex flex-col justify-end p-8 text-white">
+                    <div className="space-y-3">
+                      <h3 className="text-3xl font-bold">Manufacturing Excellence</h3>
+                      <p className="text-blue-100">State-of-the-art facilities & precision engineering</p>
+                      <div className="grid grid-cols-2 gap-3 pt-2">
+                        <div className="bg-white/10 backdrop-blur rounded-lg p-3">
+                          <div className="text-2xl font-bold">ISO</div>
+                          <div className="text-sm text-blue-100">Certified</div>
+                        </div>
+                        <div className="bg-white/10 backdrop-blur rounded-lg p-3">
+                          <div className="text-2xl font-bold">20+</div>
+                          <div className="text-sm text-blue-100">Years</div>
+                        </div>
                       </div>
                     </div>
                   </div>
